@@ -307,8 +307,16 @@ docker compose up --build
 
 # …then the UI (dev server on :5173, talks to :8080)
 cd frontend && cp .env.example .env && npm install && npm run dev
+# (Windows cmd: copy .env.example .env)
 # open http://localhost:5173 — register; the first account becomes ADMIN
 ```
+
+| Service | Default port | Verify overlay port |
+|---|---|---|
+| API | 8080 | 8081 |
+| Postgres | 5432 | 5434 |
+| Redis | 6379 | 6380 |
+| Vite dev | 5173 | 5173 |
 
 Port clashes (another stack holding 5432/6379)? Use the standalone overlay:
 
