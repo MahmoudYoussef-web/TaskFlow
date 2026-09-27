@@ -4,6 +4,11 @@ import jakarta.persistence.*;
 import java.time.Instant;
 import java.util.UUID;
 
+/**
+ * System-facing work derived from a {@code Task} with a due date. A task says
+ * <i>what</i> is due; this says <i>when the system must act</i> and tracks every
+ * attempt until it succeeds or exhausts {@code maxRetries}.
+ */
 @Entity
 @Table(name = "scheduled_jobs")
 public class ScheduledJob {

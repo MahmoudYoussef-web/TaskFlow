@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import java.time.Instant;
 import java.util.UUID;
 
+/**
+ * One recorded run attempt of a {@link ScheduledJob}. Jobs are retried, so a
+ * job has many executions; exactly one of them may be {@code SUCCESS}.
+ */
 @Entity
 @Table(name = "job_executions")
 public class JobExecution {

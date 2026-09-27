@@ -27,7 +27,7 @@ login → board → drag → detail panel with reminder status → overview → 
 - [Known Limitations](#known-limitations)
 - [UI Preview](#ui-preview)
 - [Getting Started](#getting-started)
-- [Author](#author)
+- [👤 Author](#-author)
 
 ## Overview
 
@@ -333,8 +333,19 @@ TASKFLOW_REDIS_HOST=localhost TASKFLOW_REDIS_PORT=6379 mvn verify
 
 API docs: `http://localhost:8080/swagger-ui.html` (or `:8081` on the overlay).
 
-## Author
-
-**Mahmoud Youssef** — Backend Software Engineer (Java / Spring Boot), Cairo, Egypt.
-Portfolio projects focus on production-shaped systems: distributed state, idempotency,
-and reliability over happy-path CRUD.
+# 👤 Author
+<table>
+  <tr>
+    <td align="center" width="300">
+      <b>Mahmoud Youssef</b><br/>
+      <sub>Backend Engineer</sub><br/><br/>
+      <a href="https://github.com/MahmoudYoussef-web">
+        <img src="https://img.shields.io/badge/GitHub-MahmoudYoussef--web-181717?style=flat-square&logo=github"/>
+      </a>
+      <br/>
+      <a href="https://www.linkedin.com/in/mahmoud-youssef-ba30723bb">
+        <img src="https://img.shields.io/badge/LinkedIn-mahmoud--youssef-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/>
+      </a>
+    </td>
+  </tr>
+</table>

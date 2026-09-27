@@ -12,6 +12,11 @@ import java.util.UUID;
 
 public interface ScheduledJobRepository extends JpaRepository<ScheduledJob, UUID> {
 
+    /**
+     * Jobs the poller may pick up: past their next run and still unfinished.
+     * Ordering by {@code nextRunAt} keeps the most overdue job first.
+     */
+
     @Query("select j from ScheduledJob j where j.nextRunAt <= :now " +
             "and j.status in (com.taskflow.scheduling.JobStatus.PENDING, " +
             "com.taskflow.scheduling.JobStatus.RETRYING) order by j.nextRunAt asc")
