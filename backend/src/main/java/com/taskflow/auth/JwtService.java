@@ -12,6 +12,7 @@ import java.time.Instant;
 import java.util.Date;
 import java.util.UUID;
 
+/** Short-lived signed access tokens. Identity = user id, role travels as a claim. */
 @Service
 public class JwtService {
     private final SecretKey key;

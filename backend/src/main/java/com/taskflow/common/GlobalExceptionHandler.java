@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 
+/**
+ * Single translation point from exceptions to the API error shape
+ * {@code {code, message, traceId, timestamp, fieldErrors}}. Optimistic-lock
+ * failures surface as 409 so clients can reload-and-retry instead of crashing.
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

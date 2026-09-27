@@ -17,6 +17,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Aggregated read model for the overview screen: counts, overdue, recent activity. */
 @RestController
 @RequestMapping("/api/v1/dashboard")
 public class DashboardController {

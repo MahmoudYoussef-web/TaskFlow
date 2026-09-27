@@ -11,6 +11,11 @@ import java.time.Instant;
 import java.util.HexFormat;
 import java.util.UUID;
 
+/**
+ * Registration, login and refresh-token rotation. Refresh tokens are random
+ * opaque strings stored SHA-256 hashed; each use revokes the presented token
+ * and issues a fresh pair, so a stolen token is usable at most once.
+ */
 @Service
 public class AuthService {
     private final UserRepository users;
