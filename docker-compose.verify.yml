@@ -1,0 +1,37 @@
+# Standalone verification stack: identical services to docker-compose.yml but
+# with remapped host ports (5432/6379 are held by another project on this host).
+# Usage: docker compose -f docker-compose.verify.yml up --build
+# Production / clean-machine usage stays: docker compose up --build
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: taskflow
+      POSTGRES_USER: taskflow
+      POSTGRES_PASSWORD: taskflow
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata-verify:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6380:6379"
+
+  app:
+    build: ./backend
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/taskflow
+      SPRING_DATASOURCE_USERNAME: taskflow
+      SPRING_DATASOURCE_PASSWORD: taskflow
+      SPRING_REDIS_HOST: redis
+      JWT_SECRET: ${JWT_SECRET:-change-me-to-a-256-bit-secret-change-me-to-a-256-bit-secret}
+    ports:
+      - "8081:8080"
+
+volumes:
+  pgdata-verify:
