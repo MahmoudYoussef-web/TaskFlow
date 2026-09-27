@@ -4,6 +4,11 @@ import jakarta.persistence.*;
 import java.time.Instant;
 import java.util.UUID;
 
+/**
+ * Immutable audit row: who did what to which task and when. Written only from
+ * domain-event listeners, never directly by services — so the trail can't be
+ * skipped or forged by a code path that forgets to log.
+ */
 @Entity
 @Table(name = "task_audit_log")
 public class TaskAuditLog {

@@ -6,6 +6,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * User-facing task. Deliberately dumb about scheduling: carrying a due date is
+ * all it takes — the scheduling package observes events and does the rest.
+ * Concurrent edits are guarded by the {@code version} optimistic lock.
+ */
 @Entity
 @Table(name = "tasks")
 public class Task {

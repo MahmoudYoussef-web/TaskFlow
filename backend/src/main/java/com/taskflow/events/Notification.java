@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import java.time.Instant;
 import java.util.UUID;
 
+/** In-app notification produced from a domain event (no external delivery). */
 @Entity
 @Table(name = "notifications")
 public class Notification {

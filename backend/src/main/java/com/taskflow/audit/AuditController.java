@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
+/** Read-only audit timeline. Authorization is delegated to {@code TaskService}. */
 @RestController
 @RequestMapping("/api/v1/tasks/{id}/history")
 public class AuditController {
