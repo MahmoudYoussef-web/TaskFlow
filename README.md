@@ -13,12 +13,7 @@
 [![Demo](https://img.shields.io/badge/demo-watch_on_YouTube-red)](https://youtu.be/VDOKjDDerXg)
 
 **Demo:** [watch the walkthrough on YouTube](https://youtu.be/VDOKjDDerXg) —
-or the raw Playwright captures (login → board → drag → detail panel with reminder
-status → overview → jobs → dark mode):
-- [`docs/demo/taskflow-demo-desktop.mp4`](./docs/demo/taskflow-demo-desktop.mp4) (1280×800)
-- [`docs/demo/taskflow-demo-mobile.mp4`](./docs/demo/taskflow-demo-mobile.mp4) (mobile viewport, swipeable columns)
-- Reproducible via [`docs/demo/record.mjs`](./docs/demo/record.mjs) (`npm i playwright`
-  + `npx playwright install chromium`, stack up, `node record.mjs`)
+login → board → drag → detail panel with reminder status → overview → jobs → dark mode.
 
 ## Table of Contents
 
@@ -286,8 +281,7 @@ erDiagram
 
 ## UI Preview
 
-Video walkthrough: [youtube.com/watch?v=VDOKjDDerXg](https://youtu.be/VDOKjDDerXg) ·
-local captures in [`docs/demo/`](./docs/demo/).
+Video walkthrough: [youtube.com/watch?v=VDOKjDDerXg](https://youtu.be/VDOKjDDerXg).
 
 <!-- SCREENSHOT SLOT: board light mode -->
 <!-- SCREENSHOT SLOT: board dark mode -->
