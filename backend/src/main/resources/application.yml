@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/taskflow}
+    username: ${SPRING_DATASOURCE_USERNAME:taskflow}
+    password: ${SPRING_DATASOURCE_PASSWORD:taskflow}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  data:
+    redis:
+      host: ${SPRING_REDIS_HOST:localhost}
+      port: ${SPRING_REDIS_PORT:6379}
+
+taskflow:
+  jwt:
+    secret: ${JWT_SECRET:change-me-to-a-256-bit-secret-change-me-to-a-256-bit-secret}
+    access-minutes: 15
+    refresh-days: 7
+  worker:
+    max-retries: 5
+    backoff-base-seconds: 30
+    lock-ttl-seconds: 120
+    poll-delay-ms: 10000
+
+logging:
+  pattern:
+    console: "%d{HH:mm:ss} [%X{traceId}] %-5level %logger{36} - %msg%n"
